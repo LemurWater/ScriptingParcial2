@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Parcial2Scripting.classes.parts
 {
-    internal class Chassis : Part
+    internal abstract class Wheel : Part
     {
-        public Chassis(float speed, float acceleration, float handling, float grip) : base(speed, acceleration, handling, grip)
+        public Wheel(float speed, float acceleration, float handling, float grip) : base(speed, acceleration, handling, grip)
         {
             Speed = speed;
             Acceleration = acceleration;

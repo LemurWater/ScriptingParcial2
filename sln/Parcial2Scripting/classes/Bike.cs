@@ -1,13 +1,11 @@
 ﻿using Parcial2Scripting.classes.parts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Parcial2Scripting.classes.parts.wheels;
+using Parcial2Scripting.interfaces;
+
 
 namespace Parcial2Scripting.classes
 {
-    internal class Bike
+    internal class Bike : ICheckExistence
     {
         private float speed;
         private float acceleration;
@@ -21,18 +19,29 @@ namespace Parcial2Scripting.classes
         private Engine engine;
         private Muffler muffler;
 
+
+        public Bike()
+        {
+            SetValues();
+        }
+
         public Bike(FrontWheel frontWheel, BackWheel backWheel, Chassis chassis, Engine engine, Muffler muffler)
         {
             Speed = 0.0f;
             Acceleration = 0.0f;
             Handliong = 0.0f;
             Grip = grip;
-            _FrontWheel = frontWheel ?? throw new ArgumentNullException(nameof(frontWheel));
-            _BackWheel = backWheel ?? throw new ArgumentNullException(nameof(backWheel));
-            _Chassis = chassis ?? throw new ArgumentNullException(nameof(chassis));
-            _Engine = engine ?? throw new ArgumentNullException(nameof(engine));
-            _Muffler = muffler ?? throw new ArgumentNullException(nameof(muffler));
+            _FrontWheel = frontWheel;
+            _BackWheel = backWheel;
+            _Chassis = chassis;
+            _Engine = engine;
+            _Muffler = muffler;
+
+
+            SetValues();
         }
+
+
 
         public float Speed { get => speed; set => speed = value; }
         public float Acceleration { get => acceleration; set => acceleration = value; }
@@ -58,6 +67,8 @@ namespace Parcial2Scripting.classes
             CheckChassis();
             CheckEngine();
             CheckMuffler();
+
+            CantBeAlone();
         }
         void CheckFrontWheel()
         {
@@ -70,6 +81,8 @@ namespace Parcial2Scripting.classes
         void CheckChassis()
         {
 
+
+            CantBeAlone();
         }
         void CheckEngine()
         {
@@ -78,6 +91,51 @@ namespace Parcial2Scripting.classes
         void CheckMuffler()
         {
 
+        }
+
+
+
+        public void SwapFrontWheel(FrontWheel newFW)
+        {
+
+
+
+            CheckFrontWheel();
+        }
+        public void SwapBackWheel(BackWheel newBW)
+        {
+
+
+            CheckBackWheel();
+        }
+        public void SwapChassis(Chassis newChassis)
+        {
+            _Chassis = newChassis;
+
+            CheckChassis();
+        }
+        public void SwapEngine(Engine newEngine)
+        {
+
+
+            CheckEngine();
+        }
+        public void SwapMuffler(Muffler newMuffler)
+        {
+
+
+
+            CheckMuffler();
+        }
+
+
+        public void CantBeAlone()
+        {
+            if(_Chassis == null)
+            {
+                Chassis c = new Chassis(1.0f, 1.0f, 1.0f, 1.0f); //Falta: crear random chassis
+                SwapChassis(c);
+            }
         }
     }
 }

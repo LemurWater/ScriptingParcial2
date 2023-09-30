@@ -16,6 +16,16 @@ namespace Parcial2Scripting.classes
 
 
 
+        protected Part(float speed, float acceleration, float handling, float grip)
+        {
+            Speed = speed;
+            Acceleration = acceleration;
+            Handling = handling;
+            Grip = grip;
+        }
+
+
+
         public float Speed { get => speed; set => speed = value; }
         public float Acceleration { get => acceleration; set => acceleration = value; }
         public float Handling { get => handling; set => handling = value; }
