@@ -11,3 +11,9 @@ UML
 Estructura del programa
 
 ![programStructure](https://github.com/LemurWater/ScriptingParcial2/assets/38868316/93d20646-3903-4335-8225-197f63bc3604)
+
+
+--------------------
+Avance con correciones en la estructura de las clases
+
+![UML_3](https://github.com/LemurWater/ScriptingParcial2/assets/38868316/02eb3511-b92b-4add-868f-60abac0b059a)
