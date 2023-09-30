@@ -9,5 +9,4 @@ UML
 
 Estructura del programa
 
-
-![programStructure](https://github.com/LemurWater/ScriptingParcial2/assets/38868316/cf89dfd1-139a-4b93-848e-07589b26d94a)
+![programStructure](https://github.com/LemurWater/ScriptingParcial2/assets/38868316/93d20646-3903-4335-8225-197f63bc3604)
